@@ -60,9 +60,9 @@ describe('Component TripSummary', () => {
   });
 
   it('should only render tags div if tags is truthy', () => {
-    const componentWithNoTags = shallow(<TripSummary tags={[]} />);
+    const componentWithNoTags = shallow(<TripSummary />);
 
-    expect(componentWithNoTags.find('.tags')).toBeTruthy();
+    expect(componentWithNoTags.find('.tags').exists()).toEqual(false);
 
     //console.log(componentWithNoTags.debug(), component.debug());
   });

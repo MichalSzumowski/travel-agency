@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './OrderOption';
+import styles from './OrderOption.scss';
 
 const OrderOptionNumber = ({currentValue, setOptionValue, limits}) => (
   <div className={styles.number}>
@@ -10,7 +10,7 @@ const OrderOptionNumber = ({currentValue, setOptionValue, limits}) => (
       min={limits.min}
       max={limits.max}
       onChange={event => setOptionValue(event.currentTarget.value)}
-      className={styles.inputSmall}
+      className={styles.input}
     />
   </div>
 );

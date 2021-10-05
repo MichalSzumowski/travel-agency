@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import OrderOption from './OrderOption';
 import DatePicker from 'react-datepicker';
 
-
 describe ('Component OrderOption', () => {
   it('should render without crashing', () => {
     const expectedName = 'component name';

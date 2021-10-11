@@ -15,28 +15,28 @@ class HappyHourAd extends React.Component {
     if(currentTime.getUTCHours() >= 12){
       nextNoon.setUTCDate(currentTime.getUTCDate()+1);
     }
-
     return Math.round((nextNoon.getTime() - currentTime.getTime())/1000);
   }
 
   getPromotion(){
-    if(this.getCountdownTime() > 23 * 60 * 60){
+    let time = this.getCountdownTime();
+    
+    if(time > 23 * 60 * 60){
       return this.props.promo;
+    } else {
+      return time;
     }
   }
 
-  render() {
-    const {title} = this.props;
-    const time = this.getCountdownTime();
+  render() {  
     return (
       <div className={styles.component}>
-        <h3 className={styles.title}>{title}</h3>
-        <div className={styles.promoDescription}>{this.getPromotion() || time}</div>
+        <h3 className={styles.title}>{this.props.title}</h3>
+        <div className={styles.promoDescription}>{this.getPromotion()}</div>
       </div>
     );
   }
 }
-
 
 HappyHourAd.propTypes = {
   title: PropTypes.string,

@@ -47,9 +47,7 @@
 
 .contact {
   text-align: right;
-  span {
-    padding-left: $base-size;
-  }
+  display: -webkit-box;
 }
 
 @media (max-width: 767px) {
